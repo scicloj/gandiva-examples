@@ -11,7 +11,7 @@ To use this project, you will have to build Arrow and Gandiva for use in the JVM
 
 As a result, you will have the Arrow-related JARs at your local Maven repository (usually the `~/.m2` directory). Check their versions (see their filenames), and make sure that the dependencies in the [project.clj](./project.clj) of this project ask for the same versions.
 
-Then, you can `lein repl` and play with the examples at [gandiva-examples/core](src/gandiva_examples/core.clj).
+Then, you can `lein repl` and play with the examples at [gandiva-examples.core](src/gandiva_examples/core.clj).
 
 ## License
 
