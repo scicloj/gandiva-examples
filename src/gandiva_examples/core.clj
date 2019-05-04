@@ -70,17 +70,16 @@
         b-validity    (byte-array [255 255])
         output-vector (IntVector. empty-schema-path allocator)
         _             (.allocateNew output-vector  (* 4 num-rows))
-        output        [output-vector]]
-    (.evaluate projector
-               num-rows
-               ^List (into-list [(buf a-validity) (int-buf a-values)
-                                 (buf b-validity) (int-buf b-values)])
-               ^List (into-list [output-vector]))
-    ;; TODO: Figure out how to release memory for output-vector.
-    (->> num-rows
-         range
-         (map #(.get output-vector %)))))
-
+        _             (.evaluate projector
+                                 num-rows
+                                 ^List (into-list [(buf a-validity) (int-buf a-values)
+                                                   (buf b-validity) (int-buf b-values)])
+                                 ^List (into-list [output-vector]))
+        result        (->> num-rows
+                           range
+                           (mapv #(.get output-vector %)))]
+    (.close output-vector)
+    result))
 
 (comment
   (evaluate-example)
