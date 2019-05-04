@@ -52,7 +52,7 @@
 (defn into-list [xs]
   (Arrays/asList (into-array xs)))
 
-(defn evalutate-example []
+(defn evaluate-example []
   ;; Inspired by: ;; https://github.com/apache/arrow/blob/master/java/gandiva/src/test/java/org/apache/arrow/gandiva/evaluator/ProjectorTest.java#L212
   (let [[a b c]       (->> [:a :b :c]
                            (map ->int32-field))
@@ -83,4 +83,4 @@
 
 
 (comment
-  (evalutate-example))
+  (evaluate-example))
