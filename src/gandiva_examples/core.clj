@@ -76,11 +76,12 @@
                ^List (into-list [(buf a-validity) (int-buf a-values)
                                  (buf b-validity) (int-buf b-values)])
                ^List (into-list [output-vector]))
-    ;; TODO: Figure out how to release output-vector.
+    ;; TODO: Figure out how to release memory for output-vector.
     (->> num-rows
          range
          (map #(.get output-vector %)))))
 
 
 (comment
-  (evaluate-example))
+  (evaluate-example)
+  #_=> (0 101 202 303 404 505 606 707 808 909 1010 1111 1212 1313 1414 1515))
