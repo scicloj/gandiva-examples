@@ -19,7 +19,7 @@
 
 (set! *warn-on-reflection* true)
 
-(def int32 (ArrowType$Int. 64 true))
+(def int32 (ArrowType$Int. 32 true))
 (def int64 (ArrowType$Int. 64 true))
 (def bool (ArrowType$Bool.))
 
