@@ -7,6 +7,12 @@
                  [org.apache.arrow/arrow-vector "0.14.0-SNAPSHOT"]
                  [org.apache.arrow/arrow-memory "0.14.0-SNAPSHOT"]
                  [org.apache.arrow/arrow-format "0.14.0-SNAPSHOT"]
-                 [org.apache.arrow.gandiva/arrow-gandiva "0.14.0-SNAPSHOT"]])
+                 [org.apache.arrow.gandiva/arrow-gandiva "0.14.0-SNAPSHOT"]
+                 [org.slf4j/slf4j-api "1.7.26"]
+                 [org.slf4j/slf4j-log4j12 "1.7.26"]]
+  :main ^:skip-aot gandiva-examples.core
+  :target-path "target/%s"
+  :profiles {:uberjar {:aot :all}})
+
 
 
